@@ -84,13 +84,13 @@ with st.sidebar:
         if st.button("💾 Save now"):
             if "messages" in st.session_state:
                 save_chat(CHAT_FILE, st.session_state.messages)
-            st.success("Saved ✅")
+            st.success("Saved")
 
     with colB:
         if st.button("🧹 Clear file"):
             save_chat(CHAT_FILE, [])
             st.session_state.messages = []
-            st.success("Cleared ✅")
+            st.success("Cleared")
             st.rerun()
 
     st.divider()
@@ -142,7 +142,7 @@ if user_input:
             try:
                 bot_reply = ask_ollama(st.session_state.messages, model_name)
             except requests.exceptions.RequestException as e:
-                bot_reply = f"❌ Error talking to Ollama: {e}"
+                bot_reply = f"Error talking to Ollama: {e}"
         st.markdown(bot_reply)
 
     # 4) save assistant reply
