@@ -98,7 +98,7 @@ with st.sidebar:
         if CHAT_FILE.exists():
             CHAT_FILE.unlink()
         st.session_state.messages = []
-        st.success("Deleted ✅")
+        st.success("Deleted")
         st.rerun()
 
 # -----------------------
